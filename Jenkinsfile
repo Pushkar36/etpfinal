@@ -44,9 +44,9 @@ pipeline {
     
     post {
         always {
-            node {
-                echo 'Pipeline execution completed.'
-                sh 'docker logout'
+            echo 'Pipeline execution completed.'
+            script {
+                sh 'docker logout || true'
             }
         }
         success {
